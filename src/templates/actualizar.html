@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="row">
+
+    <div class="col-md-4 offset-md-4">
+        <form action="/update/{{usu.id}}" method="POST" class="card bg-dark text-white">
+            <div class="card-body p-4">
+                <center><h1>Actualizar</h1></center>
+                <br>
+
+                <div class="mb-3">
+                    <label for="fullname">Ingrese el nuevo nombre</label>
+                    <input type="text" name="fullname" placeholder="nomnre" value="{{usu.fullname}}"
+                        class="form-control rounded-0 bg-dark border-0 text-white">
+
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label for="contrasena">ingrese su nueva contraseña</label>
+                    <input type="text" name="contrasena" placeholder="contraseña" value="{{usu.contrasena}}"
+                        class="form-control rounded-0 bg-dark border-0 text-white">
+                </div>
+
+
+
+                <button type="submit" class="btn btn-secondary">actualizar</button>
+            </div>
+
+
+        </form>
+
+    </div>
+
+
+</div>
+
+
+{% endblock %}

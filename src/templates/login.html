@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+
+<div class="row">
+
+    <div class="col-md-5">
+        {% include('partials/_message.html') %}
+
+        {% include('partials/_formRegistrar.html') %}
+
+    </div>
+
+    <div class="col-md-7">
+
+
+
+        {% for usuario in usu_list: %}
+
+        <div class="card mb-1 text-white bg-dark">
+
+            <div class="card-body">
+                <h4>Nombre:</h4>
+                <div class="d-flex justify-content-between">
+                    <h5>{{usuario.fullname}}</h5>
+
+                    <div>
+                        <a href="/update/{{usuario.id}}" class="btm bg-black btn-sm rounded-0">Actualizar</a>
+                        <a href="/delete/{{usuario.id}}" class="btm btn-danger btn-sm rounded-0">Eliminar</a>
+                       
+
+                    </div>
+
+                </div>
+                <h4>contraseña:</h4>
+                <p>{{usuario.contrasena}} </p>
+
+
+
+
+
+            </div>
+
+
+        </div>
+
+        {% endfor %}
+
+
+    </div>
+
+</div>
+
+
+
+{% endblock %}
